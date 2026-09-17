@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AHA — een galactische keukentafeldialoog</title>
+<meta name="description" content="Aha is een galactische keukentafeldialoog over sterren, kometen, en wat je moet geloven om in wetenschap te geloven. Een voorstelling van Martha Balthazar en Leon Adriaensen.">
+<link rel="icon" href="data:,">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --paper:#fdfcf9;
+    --paper-alt:#f4f1e9;
+    --ink:#1b1b18;
+    --ink-soft:#57544c;
+    --blue:#1a1ff2;
+    --blue-deep:#0c0fae;
+    --rule:#ddd8ca;
+    --rule-strong:#b9b2a0;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --marker: "Permanent Marker", "Segoe Print", cursive;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --content-w: 42rem;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;}
+
+  a{color:var(--blue); text-decoration-thickness:1.5px; text-underline-offset:3px;}
+  a:hover{color:var(--blue-deep);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--blue); outline-offset:3px;}
+
+  h1,h2,h3{text-wrap:balance; margin:0;}
+
+  .wrap{
+    max-width:var(--content-w);
+    margin-inline:auto;
+    padding-inline:20px;
+  }
+  .wrap--wide{max-width:64rem;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky;
+    top:env(safe-area-inset-top, 0px);
+    z-index:40;
+    background:rgba(253,252,249,0.92);
+    backdrop-filter:blur(6px);
+  }
+  .nav-inner{
+    max-width:64rem;
+    margin-inline:auto;
+    padding:10px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .nav-word{
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
+    text-decoration:none;
+  }
+  .nav-logo{
+    height:26px;
+    width:auto;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-family:var(--sans);
+    font-size:0.85rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    flex-wrap:wrap;
+  }
+  .nav-links a{color:var(--ink-soft); text-decoration:none;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-cta{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.82rem;
+    color:#fff;
+    background:var(--blue);
+    padding:7px 14px;
+    border-radius:2px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--blue-deep); color:#fff;}
+  @media (max-width:640px){
+    .nav-links{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding-block:44px 40px;
+  }
+  .hero-grid{
+    display:flex;
+    gap:44px;
+    align-items:flex-start;
+  }
+  .hero-art{
+    flex:0 0 auto;
+    width:min(400px, 50vw);
+  }
+  .hero-art img{
+    width:100%;
+    height:auto;
+    border:5px solid var(--blue);
+    box-shadow:5px 7px 0 rgba(0,0,0,0.06);
+  }
+  .hero-main{
+    flex:1 1 320px;
+    min-width:0;
+    padding-top:6px;
+  }
+  .hero-logo{
+    width:min(360px, 100%);
+    height:auto;
+    margin-bottom:18px;
+  }
+  .nametag-img{
+    display:block;
+    width:min(320px, 100%);
+    height:auto;
+    margin-bottom:22px;
+  }
+  .tagline{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink);
+    max-width:34ch;
+    margin-bottom:0;
+  }
+  @media (max-width:680px){
+    .hero-grid{flex-direction:column; gap:26px;}
+    .hero-art{width:min(320px,72vw);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{padding-block:38px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .section-head h2{
+    font-family:var(--marker);
+    color:var(--blue);
+    font-size:2rem;
+    font-weight:400;
+  }
+  .section-head-img{
+    height:34px;
+    width:auto;
+    display:block;
+  }
+  .section-head .rule{
+    flex:1;
+    height:2px;
+    background:var(--rule);
+    transform:translateY(2px);
+  }
+  .divider{
+    max-width:var(--content-w);
+    margin-inline:auto;
+    height:1.5px;
+    background:transparent;
+  }
+
+  .prose p{margin:0 0 1.1em 0;}
+  .prose p:last-child{margin-bottom:0;}
+  .prose{text-align:justify; hyphens:auto;}
+  .prose em{font-style:italic; color:var(--blue-deep);}
+
+  .quote{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.08rem;
+    color:var(--blue-deep);
+    border-left:3px solid var(--blue);
+    padding-left:18px;
+    margin:0 0 1.6em 0;
+  }
+  .quote p{margin:0 0 0.3em 0;}
+  .quote .speaker{color:var(--ink); font-style:normal; font-weight:600; font-family:var(--sans); font-size:0.78rem; letter-spacing:0.03em;}
+
+  .support-note{
+    margin-top:1.4em;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  /* ---------- SPEELLIJST ---------- */
+  .shows{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:18px 22px;
+  }
+  .show{
+    display:contents;
+  }
+  .show-date{
+    font-family:var(--sans);
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+    font-size:1rem;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .show-place{
+    min-width:0;
+  }
+  .show-venue{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .show-city{
+    font-family:var(--sans);
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .badge{
+    display:inline-block;
+    font-family:var(--sans);
+    font-size:0.65rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    color:var(--blue);
+    border:1.3px solid var(--blue);
+    border-radius:2px;
+    padding:2px 6px;
+    margin-left:8px;
+    vertical-align:middle;
+  }
+  .show-ticket{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--blue);
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:1.5px solid var(--blue);
+    padding-bottom:1px;
+  }
+  .show-ticket:hover{color:var(--blue-deep); border-color:var(--blue-deep);}
+  .more-dates{
+    padding-top:16px;
+    font-family:var(--sans);
+    font-size:0.85rem;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  @media (max-width:560px){
+    .shows{grid-template-columns:1fr; gap:4px;}
+    .show-ticket{margin-bottom:16px;}
+  }
+
+  /* ---------- PHOTOS ---------- */
+  .gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:34px 26px;
+    padding-block:8px 4px;
+  }
+  .gallery figure{
+    margin:0;
+    width:min(300px, 80vw);
+  }
+  .gallery img{
+    width:100%;
+    height:auto;
+    box-shadow:0 10px 22px rgba(20,15,5,0.14);
+  }
+
+  .duo-photos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding-block:8px 0;
+  }
+  .duo-photos img{
+    flex:1 1 320px;
+    min-width:0;
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  /* ---------- CREDITS ---------- */
+  .contact-line{
+    font-family:var(--sans);
+    font-size:0.9rem;
+    color:var(--ink);
+    margin-bottom:26px;
+  }
+  .contact-line .label{
+    color:var(--blue);
+    font-weight:700;
+    margin-right:8px;
+  }
+  .contact-line a{
+    color:var(--ink);
+    text-decoration-thickness:1.3px;
+  }
+  .contact-line a:hover{color:var(--blue-deep);}
+
+  .credits-grid{
+    display:flex;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .credits-list{
+    flex:1 1 280px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .credits-list li{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 8px;
+    padding-block:9px;
+    font-size:0.98rem;
+  }
+  .credits-list .name{
+    font-weight:600;
+    color:var(--blue-deep);
+    font-family:var(--serif);
+  }
+  .credits-list .role{color:var(--ink-soft); font-family:var(--sans); font-size:0.88rem;}
+
+  .credits-extra{
+    flex:1 1 240px;
+    font-family:var(--sans);
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+  .credits-extra strong{color:var(--ink); font-weight:600;}
+  .credits-extra a{color:var(--blue);}
+  .credits-extra p{margin:0 0 1em 0;}
+
+  .press-list{
+    list-style:none;
+    margin:0; padding:0;
+    max-width:40rem;
+  }
+  .press-list li{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:4px 10px;
+    padding-block:9px;
+    font-size:0.98rem;
+  }
+  .press-list a{
+    font-family:var(--serif);
+    font-weight:600;
+    color:var(--blue-deep);
+  }
+  .press-source{
+    font-family:var(--sans);
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+
+  .poster-frame{
+    margin-top:36px;
+    max-width:420px;
+    margin-inline:auto;
+  }
+  .poster-frame img{
+    width:100%;
+    height:auto;
+    box-shadow:0 10px 22px rgba(20,15,5,0.14);
+  }
+  footer{
+    padding-block:34px 48px;
+    text-align:center;
+    font-family:var(--sans);
+    font-size:0.8rem;
+    color:var(--ink-soft);
+  }
+  footer .foot-word{
+    display:block;
+    margin:0 auto 10px;
+    height:22px;
+    width:auto;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-word"><img class="nav-logo" src="images/aha-logo.png" alt="AHA"></a>
+    <div class="nav-links">
+      <a href="#over">Over</a>
+      <a href="#speellijst">Speellijst</a>
+      <a href="#pers">Pers</a>
+      <a href="#credits">Credits</a>
+      <a href="#contact">Contactgegevens</a>
+    </div>
+    <a href="#speellijst" class="nav-cta">Tickets</a>
+  </div>
+</nav>
+
+<div id="top" class="wrap hero">
+  <div class="hero-grid">
+    <div class="hero-art">
+      <img src="images/cat.jpg" alt="Kindertekening van een gestreepte kat met een mokje in de hand, in kleurpotlood — het beeld dat AHA begeleidt.">
+    </div>
+    <div class="hero-main">
+      <img class="hero-logo" src="images/aha-logo.png" alt="AHA — met de hand geschreven titel in blauwe stift">
+      <img class="nametag-img" src="images/nametag.jpg" alt="Martha Balthazar &amp; Leon Adriaensen, met de hand geschreven in blauwe stift">
+      <p class="tagline">Een galactische keukentafeldialoog over sterren, kometen, en wat je moet geloven om in wetenschap te geloven.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="over" class="wrap">
+  <div class="quote">
+    <p><span class="speaker">A</span> &mdash; Ik herinner me nog dat jij niet wist dat vallende sterren geen sterren zijn maar kometen en dat je kwaad op me was omdat je dat liever niet had geweten en dat ik dacht: maar dat maakt toch niet uit of het een komeet is of een ster.</p>
+    <p><span class="speaker">T</span> &mdash; Je kan nog steeds wensen, zei je</p>
+    <p><span class="speaker">A</span> &mdash; Je kan nog steeds wensen</p>
+  </div>
+  <div class="prose">
+    <p>Aha is een galactische keukentafeldialoog over de waarde en waanzin van het woord &lsquo;waarom&rsquo;. Over de wispelturige aard van wiskunde en wat je moet geloven om in wetenschap te geloven. Maar Aha is vooral een gesprek tussen geliefden, waarin kennis nog geen waarheid blijkt, en waarheid nog geen wijsheid. Met Barbara T&rsquo;Jonck en Carine Van Bruggen aan weerszijden van het vraagstuk.</p>
+    <p>Aha is ontstaan vanuit een gesprek dat al jaren gaande is. Theatermaker Martha Balthazar en fysicus Leon Adriaensen, in hun vrije tijd geliefden, botsen aan de keukentafel wel vaker op hoe ze vanuit hun totaal verschillende disciplines de werkelijkheid bekijken en begrijpen.</p>
+    <p>In die voortdurende ontmoeting groeide het idee van een voorstelling die de dialoog tussen kunst en wetenschap onderzoekt, en daarmee ook de verhouding tussen wetenschap en samenleving.</p>
+    <p>Aha vertrekt niet vanuit spectaculaire wetenschappelijke resultaten, maar vanuit de discipline van het begrijpen zelf. Hoe komen we tot kennis? Welke rol spelen verbeelding, abstractie en twijfel in dat proces? Wat is &lsquo;een feit&rsquo;, wat is &lsquo;de waarheid&rsquo;?</p>
+  </div>
+</section>
+
+<div class="wrap wrap--wide duo-photos">
+  <img src="images/photo4.jpg" alt="Repetitiebeeld van Aha: twee performers aan de ronde tafel onder de verlichte cirkel.">
+  <img src="images/photo5.jpg" alt="Repetitiebeeld van Aha: twee performers staan voor publiek in de ruimte.">
+</div>
+
+<div class="divider"></div>
+
+<section id="speellijst" class="wrap">
+  <div class="section-head">
+    <h2>Speellijst</h2>
+  </div>
+  <div class="shows">
+    <div class="show">
+      <div class="show-date">3&ndash;8 aug 2026</div>
+      <div class="show-place">
+        <div class="show-venue">Theater Aan Zee<span class="badge">PREMI&Egrave;RE</span></div>
+        <div class="show-city">Oostende</div>
+      </div>
+      <a class="show-ticket" href="https://theateraanzee.be/programma/aha-premi%C3%A8re" target="_blank" rel="noopener">tickets &rarr;</a>
+    </div>
+    <div class="show">
+      <div class="show-date">25&ndash;26 feb 2027</div>
+      <div class="show-place">
+        <div class="show-venue">KVS</div>
+        <div class="show-city">Brussel</div>
+      </div>
+      <a class="show-ticket" href="https://www.kvs.be/nl/event/aha" target="_blank" rel="noopener">tickets &rarr;</a>
+    </div>
+    <div class="show">
+      <div class="show-date">23 apr 2027</div>
+      <div class="show-place">
+        <div class="show-venue">VUB / Pilar</div>
+        <div class="show-city">Brussel</div>
+      </div>
+      <a class="show-ticket" href="https://www.eventbrite.be/o/pilar-18004751158" target="_blank" rel="noopener">tickets &rarr;</a>
+    </div>
+  </div>
+  <p class="more-dates">Meer speeldata volgen binnenkort.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="fotos" class="wrap wrap--wide">
+  <div class="gallery">
+    <figure>
+      <img src="images/photo1.jpg" alt="Repetitiebeeld van Aha: een performer met een rode ronde lamp en een tafel met kopjes op de achtergrond.">
+    </figure>
+    <figure>
+      <img src="images/photo3.jpg" alt="Detailbeeld van een speelgoedpoppetje in een laarsje, tussen pantoffels op een terrazzovloer.">
+    </figure>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="pers" class="wrap">
+  <div class="section-head">
+    <h2>Pers</h2>
+  </div>
+  <ul class="press-list">
+    <li><a href="https://www.bruzz.be/actua/cultuurnieuws/theaterproject-aha-sleept-caroline-pauwelsbeurs-voor-de-verwondering-de-wacht" target="_blank" rel="noopener">Theaterproject Aha sleept Caroline Pauwelsbeurs voor de Verwondering in de wacht</a><span class="press-source">Bruzz</span></li>
+    <li><a href="https://www.pzazz.theater/nl/recensies/theater/wanneer-onzekerheid-een-drama-wordt" target="_blank" rel="noopener">Wanneer onzekerheid een drama wordt</a><span class="press-source">Pzazz</span></li>
+    <li><a href="https://www.vub.be/nl/nieuws/wetenschap-kan-even-diep-beroeren-als-een-theaterstuk-een-boek" target="_blank" rel="noopener">Wetenschap kan even diep beroeren als een theaterstuk of een boek</a><span class="press-source">VUB</span></li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<section id="credits" class="wrap">
+  <div class="section-head">
+    <img class="section-head-img" src="images/credits-heading.jpg" alt="Credits">
+  </div>
+  <div class="credits-grid">
+    <ul class="credits-list">
+      <li><span class="name">Martha Balthazar</span><span class="role">concept, tekst en regie</span></li>
+      <li><span class="name">Leon Adriaensen</span><span class="role">concept en tekst</span></li>
+      <li><span class="name">Carine Van Bruggen</span><span class="role">spel en tekst</span></li>
+      <li><span class="name">Barbara T&rsquo;Jonck</span><span class="role">spel</span></li>
+      <li><span class="name">Lars Uten</span><span class="role">licht en scenografie</span></li>
+    </ul>
+    <div class="credits-extra">
+      <p><strong>Posterbeeld</strong> &mdash; May Abnet</p>
+      <p><strong>Foto&rsquo;s</strong> &mdash; Bas Blaasse</p>
+      <p><strong>Met dank aan</strong> &mdash; deAuteurs, TAZ, VUB, KVS &amp; Transitie UGent</p>
+      <p>Deze voorstelling kwam tot stand mede dankzij de <strong>Caroline Pauwelsbeurs voor Verwondering</strong>, een initiatief van deAuteurs, TAZ, VUB &amp; KVS.</p>
+    </div>
+  </div>
+  <div class="poster-frame">
+    <img src="images/painting.jpg" alt="Schilderij van een vrouw die uit een glazen karaf drinkt, met een armillairsfeer op de achtergrond.">
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact" class="wrap">
+  <div class="section-head">
+    <h2>Contactgegevens</h2>
+  </div>
+  <div class="contact-line" style="text-align:center;">
+    <a href="mailto:martha.balthazar@hotmail.com">martha.balthazar@hotmail.com</a> &middot; <a href="mailto:leon.adriaensen@gmail.com">leon.adriaensen@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <img class="foot-word" src="images/aha-logo.png" alt="AHA">
+</footer>
+
+</body>
+</html>
